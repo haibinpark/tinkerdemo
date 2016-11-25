@@ -151,11 +151,11 @@ ext {
 
     //for normal build
     //old apk file to build patch apk
-    tinkerOldApkPath = "${bakPath}/app-debug-1018-17-32-47.apk"
+    tinkerOldApkPath = "${bakPath}/app-debug-1125-17-40-21.apk"
     //proguard mapping file to build patch apk
-    tinkerApplyMappingPath = "${bakPath}/app-debug-1018-17-32-47-mapping.txt"
+//    tinkerApplyMappingPath = "${bakPath}/app-debug-1018-17-32-47-mapping.txt"
     //resource R.txt to build patch apk, must input if there is resource changed
-    tinkerApplyResourcePath = "${bakPath}/app-debug-1018-17-32-47-R.txt"
+    tinkerApplyResourcePath = "${bakPath}/app-debug-1125-17-40-21-R.txt"
 
     //only use for build all flavor, if not, just ignore this field
     //tinkerBuildFlavorDirectory = "${bakPath}/app-1018-17-32-47"
@@ -232,7 +232,7 @@ if (buildWithTinker()) {
              * Warning:
              * you must be careful that it will affect the normal assemble build!
              */
-            applyMapping = getApplyMappingPath()
+//            applyMapping = getApplyMappingPath()
             /**
              * optional，default 'null'
              * It is nice to keep the resource id from R.txt file to reduce java changes
