@@ -292,7 +292,7 @@ if (buildWithTinker()) {
                       //warning, you must change it with your application
                       "com.wkllme.llmwithtinker.app.LLMApplication",
                       //use sample, let BaseBuildInfo unchangeable with tinker
-                      "tinker.sample.android.app.BaseBuildInfo"
+                      "com.wkllme.llmwithtinker.app.BaseBuildInfo"
             ]
         }
 
