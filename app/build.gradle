@@ -211,7 +211,7 @@ if (buildWithTinker()) {
          *         it won't crash, but these changes can't effect. you may ignore it
          * case 5: resources.arsc has changed, but we don't use applyResourceMapping to build
          */
-        ignoreWarning = false
+        ignoreWarning = true
 
         /**
          * optional，default 'true'
