@@ -30,9 +30,11 @@
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="RESTART"/>
+                <action android:name="RESTART" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".display.TestActivity"></activity>
     </application>
 
 </manifest>

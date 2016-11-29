@@ -12,14 +12,27 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.tencent.tinker.lib.tinker.TinkerInstaller;
+import com.wkllme.llmwithtinker.display.TestActivity;
 
 public class MainActivity extends AppCompatActivity {
+
+    Button start_new_activity;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button loadPatch = (Button) findViewById(R.id.loadPatch);
+        start_new_activity = (Button) findViewById(R.id.start_new_activity);
+        start_new_activity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, TestActivity.class);
+                startActivity(intent);
+            }
+        });
         loadPatch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
