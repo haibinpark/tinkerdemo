@@ -17,6 +17,8 @@ dependencies {
 
     compile "com.android.support:multidex:1.0.1"
 
+    compile project(':PushSDK1')
+
 }
 
 def gitSha() {
@@ -152,11 +154,11 @@ ext {
 
     //for normal build
     //old apk file to build patch apk
-    tinkerOldApkPath = "${bakPath}/app-debug-1125-17-40-21.apk"
+    tinkerOldApkPath = "${bakPath}/app-debug-1206-15-03-20.apk"
     //proguard mapping file to build patch apk
 //    tinkerApplyMappingPath = "${bakPath}/app-debug-1018-17-32-47-mapping.txt"
     //resource R.txt to build patch apk, must input if there is resource changed
-    tinkerApplyResourcePath = "${bakPath}/app-debug-1125-17-40-21-R.txt"
+    tinkerApplyResourcePath = "${bakPath}/app-debug-1206-15-03-20-R.txt"
 
     //only use for build all flavor, if not, just ignore this field
     //tinkerBuildFlavorDirectory = "${bakPath}/app-1018-17-32-47"
