@@ -12,6 +12,11 @@ LLMWithTinker
 ## 集成Tinker更新代码  
 
 ## step2 集成TinkerPatch
+集成tinkerpatch平台补丁
+
+
+
+
 
 
 

@@ -36,14 +36,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="打补丁测试5！!"/>
-    <Button
-        android:id="@+id/loadPatch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView"
-        android:text="load patch"/>
+    <!--<Button-->
+        <!--android:id="@+id/loadPatch"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_below="@+id/textView"-->
+        <!--android:text="load patch"/>-->
 
 
     <Button
@@ -54,4 +54,11 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView"
         android:text="restart app"/>
+
+
+    <Button
+        android:id="@+id/test_crash_bug"
+        android:text="这个是一个触发崩溃的按钮"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </LinearLayout>
