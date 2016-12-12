@@ -54,12 +54,13 @@ public class MainActivity extends AppCompatActivity {
                 android.os.Process.killProcess(android.os.Process.myPid());
             }
         });
+        test_crash_bug = (Button) findViewById(R.id.test_crash_bug);
         test_crash_bug.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast
                         .makeText(MainActivity.this, "这个错误已经修正了", Toast.LENGTH_LONG)
-                        .show();
+                .show();
             }
         });
 
