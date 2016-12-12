@@ -19,6 +19,8 @@ dependencies {
 
     compile project(':PushSDK1')
 
+    compile("com.tencent.tinker:tinker-server-android:0.3.2")
+
 }
 
 def gitSha() {
@@ -88,7 +90,7 @@ android {
         minSdkVersion 11
         targetSdkVersion 25
         versionCode 1
-        versionName "1.0"
+        versionName "1.1"
 
         /**
          * you can use multiDex and install it in your ApplicationLifeCycle implement
@@ -114,9 +116,11 @@ android {
         buildConfigField "String", "PLATFORM",  "\"all\""
 
 
+        //TinkerPatch设置
+        buildConfigField "String", "APP_KEY", "\"d4bd89613636d4f6\""
 
-
-
+        //版本号
+        buildConfigField "String", "APP_VERSION",  "\"1.1\""
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -356,6 +360,7 @@ if (buildWithTinker()) {
              * patch version via packageConfig
              */
             configField("patchVersion", "1.0")
+
         }
         //or you can add config filed outside, or get meta value from old apk
         //project.tinkerPatch.packageConfig.configField("test1", project.tinkerPatch.packageConfig.getMetaDataFromOldApk("Test"))

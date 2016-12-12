@@ -73,6 +73,11 @@
             android:name=".service.SampleResultService"
             android:exported="false" />
 
+        <service
+            android:name="com.tencent.tinker.app.service.TinkerServerResultService"
+            android:exported="false"
+            />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

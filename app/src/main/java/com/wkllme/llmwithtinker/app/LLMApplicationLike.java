@@ -1,5 +1,6 @@
 package com.wkllme.llmwithtinker.app;
 
+import android.annotation.TargetApi;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +10,9 @@ import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import com.tencent.tinker.anno.DefaultLifeCycle;
+import com.tencent.tinker.app.TinkerServerManager;
+import com.tencent.tinker.lib.BuildConfig;
+import com.tencent.tinker.lib.tinker.Tinker;
 import com.tencent.tinker.lib.tinker.TinkerInstaller;
 import com.tencent.tinker.loader.app.DefaultApplicationLike;
 import com.tencent.tinker.loader.shareutil.ShareConstants;
@@ -32,7 +36,6 @@ public class LLMApplicationLike extends DefaultApplicationLike {
         super(application, tinkerFlags, tinkerLoadVerifyFlag, applicationStartElapsedTime, applicationStartMillisTime, tinkerResultIntent, resources, classLoader, assetManager);
     }
 
-
     @Override
     public void onBaseContextAttached(Context base) {
         super.onBaseContextAttached(base);
@@ -51,15 +54,24 @@ public class LLMApplicationLike extends DefaultApplicationLike {
         //installTinker after load multiDex
         //or you can put com.tencent.tinker.** to main dex
         TinkerManager.installTinker(this);
+
+
+        TinkerServerManager.installTinkerServer(getApplication(),
+                Tinker.with(getApplication()),
+                1,
+                com.wkllme.llmwithtinker.BuildConfig.APP_KEY,
+                com.wkllme.llmwithtinker.BuildConfig.APP_VERSION,
+                "default");
+        TinkerServerManager.checkTinkerUpdate(false);
     }
 
 
     @Override
     public void onCreate() {
         super.onCreate();
-        PushAgent mPushAgent = PushAgent.getInstance(getApplication());
+        LLMApplicationContext.mPushAgent = PushAgent.getInstance(getApplication());
 //注册推送服务，每次调用register方法都会回调该接口
-        mPushAgent.register(new IUmengRegisterCallback() {
+        LLMApplicationContext.mPushAgent.register(new IUmengRegisterCallback() {
 
             @Override
             public void onSuccess(String deviceToken) {
@@ -69,7 +81,6 @@ public class LLMApplicationLike extends DefaultApplicationLike {
 
             @Override
             public void onFailure(String s, String s1) {
-
             }
         });
 
