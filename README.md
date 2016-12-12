@@ -9,6 +9,10 @@ LLMWithTinker
 ## step1 文件配置  
 由于Tinker不要需要禁用InstantRun
 ## step1 配置 `.gradle` 文件  
+## 集成Tinker更新代码  
+
+## step2 集成TinkerPatch
+
 
 
 

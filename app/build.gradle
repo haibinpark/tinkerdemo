@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.tencent.tinker.patch'
 
 
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -82,7 +83,7 @@ android {
 
     defaultConfig {
         applicationId "com.wkllme.llmwithtinker"
-        minSdkVersion 10
+        minSdkVersion 11
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -151,11 +152,11 @@ ext {
 
     //for normal build
     //old apk file to build patch apk
-    tinkerOldApkPath = "${bakPath}/app-debug-1128-18-12-15.apk"
+    tinkerOldApkPath = "${bakPath}/app-debug-1212-14-55-56.apk"
     //proguard mapping file to build patch apk
 //    tinkerApplyMappingPath = "${bakPath}/app-debug-1018-17-32-47-mapping.txt"
     //resource R.txt to build patch apk, must input if there is resource changed
-    tinkerApplyResourcePath = "${bakPath}/app-debug-1128-18-12-15-R.txt"
+    tinkerApplyResourcePath = "${bakPath}/app-debug-1212-14-55-56-R.txt"
 
     //only use for build all flavor, if not, just ignore this field
     //tinkerBuildFlavorDirectory = "${bakPath}/app-1018-17-32-47"
